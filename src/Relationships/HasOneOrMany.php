@@ -204,7 +204,7 @@ abstract class HasOneOrMany extends Relationship
                 // TODO : Refactor This
                 $cache->cacheLoadedRelationResult($key, $relation, $value, $this);
             } else {
-                $result[$relation] = $this->relatedMap->newCollection();
+                $result[$relation] = $type === 'many' ? $this->relatedMap->newCollection() : null;
             }
 
             return $result;
