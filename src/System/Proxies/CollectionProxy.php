@@ -338,6 +338,16 @@ class CollectionProxy extends EntityCollection implements ProxyInterface
     /**
      * {@inheritdoc}
      */
+    public function whereInstanceOf($type)
+    {
+        $this->initializeProxy();
+
+        return parent::whereInstanceOf($type);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function whereNotIn($key, $values, $strict = false)
     {
         $this->initializeProxy();
